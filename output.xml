@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.0 (Python 3.12.1 on darwin)" generated="2024-05-02T11:49:55.991339" rpa="false" schemaversion="5">
+<suite id="s1" name="Persondetails" source="/Users/ganesh/Desktop/trial/persondetails.robot">
+<test id="s1-t1" name="Check the Details in LinkedIn" line="34">
+<kw name="Initialize The Test">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2024-05-02T11:49:56.418642" level="INFO">Opening browser 'Chrome' to base url 'https://www.google.com/search?client=firefox-b-d&amp;q=ganesh+vasudevan'.</msg>
+<msg time="2024-05-02T11:49:56.754159" level="WARN">The chromedriver version (112.0.5615.49) detected in PATH at /usr/local/bin/chromedriver might not be compatible with the detected chrome version (124.0.6367.118); currently, chromedriver 124.0.6367.91 is recommended for chrome 124.*, so it is advised to delete the driver in PATH and retry</msg>
+<msg time="2024-05-02T11:49:59.233821" level="INFO">Cannot capture screenshot because no browser is open.</msg>
+<msg time="2024-05-02T11:49:59.234328" level="FAIL">SessionNotCreatedException: Message: session not created: This version of ChromeDriver only supports Chrome version 112
+Current browser version is 124.0.6367.118 with binary path /Applications/Google Chrome.app/Contents/MacOS/Google Chrome
+Stacktrace:
+0   chromedriver                        0x000000010fef2ae8 chromedriver + 4958952
+1   chromedriver                        0x000000010feea7b3 chromedriver + 4925363
+2   chromedriver                        0x000000010faac1d6 chromedriver + 475606
+3   chromedriver                        0x000000010fadcef0 chromedriver + 675568
+4   chromedriver                        0x000000010fad7cd6 chromedriver + 654550
+5   chromedriver                        0x000000010fad4069 chromedriver + 639081
+6   chromedriver                        0x000000010fb1f6e9 chromedriver + 947945
+7   chromedriver                        0x000000010fb1ea7f chromedriver + 944767
+8   chromedriver                        0x000000010fb159e3 chromedriver + 907747
+9   chromedriver                        0x000000010fadfaef chromedriver + 686831
+10  chromedriver                        0x000000010fae100e chromedriver + 692238
+11  chromedriver                        0x000000010feae9ad chromedriver + 4680109
+12  chromedriver                        0x000000010feb3c12 chromedriver + 4701202
+13  chromedriver                        0x000000010feba79f chromedriver + 4728735
+14  chromedriver                        0x000000010feb4b7a chromedriver + 4705146
+15  chromedriver                        0x000000010fe8727e chromedriver + 4518526
+16  chromedriver                        0x000000010fed4908 chromedriver + 4835592
+17  chromedriver                        0x000000010fed4a87 chromedriver + 4835975
+18  chromedriver                        0x000000010fee400f chromedriver + 4898831
+19  libsystem_pthread.dylib             0x00007ff81897a1d3 _pthread_start + 125
+20  libsystem_pthread.dylib             0x00007ff818975bd3 thread_start + 15
+</msg>
+<arg>${data_URL}</arg>
+<arg>browser=${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="FAIL" start="2024-05-02T11:49:56.418344" elapsed="2.846364">SessionNotCreatedException: Message: session not created: This version of ChromeDriver only supports Chrome version 112
+Current browser version is 124.0.6367.118 with binary path /Applications/Google Chrome.app/Contents/MacOS/Google Chrome
+Stacktrace:
+0   chromedriver                        0x000000010fef2ae8 chromedriver + 4958952
+1   chromedriver                        0x000000010feea7b3 chromedriver + 4925363
+2   chromedriver                        0x000000010faac1d6 chromedriver + 475606
+3   chromedriver                        0x000000010fadcef0 chromedriver + 675568
+4   chromedriver                        0x000000010fad7cd6 chromedriver + 654550
+5   chromedriver                        0x000000010fad4069 chromedriver + 639081
+6   chromedriver                        0x000000010fb1f6e9 chromedriver + 947945
+7   chromedriver                        0x000000010fb1ea7f chromedriver + 9...
+    [ Message content over the limit has been removed. ]
+...hromedriver                        0x000000010fae100e chromedriver + 692238
+11  chromedriver                        0x000000010feae9ad chromedriver + 4680109
+12  chromedriver                        0x000000010feb3c12 chromedriver + 4701202
+13  chromedriver                        0x000000010feba79f chromedriver + 4728735
+14  chromedriver                        0x000000010feb4b7a chromedriver + 4705146
+15  chromedriver                        0x000000010fe8727e chromedriver + 4518526
+16  chromedriver                        0x000000010fed4908 chromedriver + 4835592
+17  chromedriver                        0x000000010fed4a87 chromedriver + 4835975
+18  chromedriver                        0x000000010fee400f chromedriver + 4898831
+19  libsystem_pthread.dylib             0x00007ff81897a1d3 _pthread_start + 125
+20  libsystem_pthread.dylib             0x00007ff818975bd3 thread_start + 15</status>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="NOT RUN" start="2024-05-02T11:49:59.265835" elapsed="0.000085"/>
+</kw>
+<status status="FAIL" start="2024-05-02T11:49:56.417553" elapsed="2.848733">SessionNotCreatedException: Message: session not created: This version of ChromeDriver only supports Chrome version 112
+Current browser version is 124.0.6367.118 with binary path /Applications/Google Chrome.app/Contents/MacOS/Google Chrome
+Stacktrace:
+0   chromedriver                        0x000000010fef2ae8 chromedriver + 4958952
+1   chromedriver                        0x000000010feea7b3 chromedriver + 4925363
+2   chromedriver                        0x000000010faac1d6 chromedriver + 475606
+3   chromedriver                        0x000000010fadcef0 chromedriver + 675568
+4   chromedriver                        0x000000010fad7cd6 chromedriver + 654550
+5   chromedriver                        0x000000010fad4069 chromedriver + 639081
+6   chromedriver                        0x000000010fb1f6e9 chromedriver + 947945
+7   chromedriver                        0x000000010fb1ea7f chromedriver + 9...
+    [ Message content over the limit has been removed. ]
+...hromedriver                        0x000000010fae100e chromedriver + 692238
+11  chromedriver                        0x000000010feae9ad chromedriver + 4680109
+12  chromedriver                        0x000000010feb3c12 chromedriver + 4701202
+13  chromedriver                        0x000000010feba79f chromedriver + 4728735
+14  chromedriver                        0x000000010feb4b7a chromedriver + 4705146
+15  chromedriver                        0x000000010fe8727e chromedriver + 4518526
+16  chromedriver                        0x000000010fed4908 chromedriver + 4835592
+17  chromedriver                        0x000000010fed4a87 chromedriver + 4835975
+18  chromedriver                        0x000000010fee400f chromedriver + 4898831
+19  libsystem_pthread.dylib             0x00007ff81897a1d3 _pthread_start + 125
+20  libsystem_pthread.dylib             0x00007ff818975bd3 thread_start + 15</status>
+</kw>
+<kw name="Accept the Google Agreement">
+<status status="NOT RUN" start="2024-05-02T11:49:59.267000" elapsed="0.000071"/>
+</kw>
+<kw name="Select the Details with Label">
+<status status="NOT RUN" start="2024-05-02T11:49:59.267338" elapsed="0.000048"/>
+</kw>
+<kw name="End the Test">
+<status status="NOT RUN" start="2024-05-02T11:49:59.267601" elapsed="0.000046"/>
+</kw>
+<status status="FAIL" start="2024-05-02T11:49:56.416936" elapsed="2.851236">SessionNotCreatedException: Message: session not created: This version of ChromeDriver only supports Chrome version 112
+Current browser version is 124.0.6367.118 with binary path /Applications/Google Chrome.app/Contents/MacOS/Google Chrome
+Stacktrace:
+0   chromedriver                        0x000000010fef2ae8 chromedriver + 4958952
+1   chromedriver                        0x000000010feea7b3 chromedriver + 4925363
+2   chromedriver                        0x000000010faac1d6 chromedriver + 475606
+3   chromedriver                        0x000000010fadcef0 chromedriver + 675568
+4   chromedriver                        0x000000010fad7cd6 chromedriver + 654550
+5   chromedriver                        0x000000010fad4069 chromedriver + 639081
+6   chromedriver                        0x000000010fb1f6e9 chromedriver + 947945
+7   chromedriver                        0x000000010fb1ea7f chromedriver + 9...
+    [ Message content over the limit has been removed. ]
+...hromedriver                        0x000000010fae100e chromedriver + 692238
+11  chromedriver                        0x000000010feae9ad chromedriver + 4680109
+12  chromedriver                        0x000000010feb3c12 chromedriver + 4701202
+13  chromedriver                        0x000000010feba79f chromedriver + 4728735
+14  chromedriver                        0x000000010feb4b7a chromedriver + 4705146
+15  chromedriver                        0x000000010fe8727e chromedriver + 4518526
+16  chromedriver                        0x000000010fed4908 chromedriver + 4835592
+17  chromedriver                        0x000000010fed4a87 chromedriver + 4835975
+18  chromedriver                        0x000000010fee400f chromedriver + 4898831
+19  libsystem_pthread.dylib             0x00007ff81897a1d3 _pthread_start + 125
+20  libsystem_pthread.dylib             0x00007ff818975bd3 thread_start + 15</status>
+</test>
+<status status="FAIL" start="2024-05-02T11:49:55.992865" elapsed="3.276355"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="0" fail="1" skip="0" id="s1" name="Persondetails">Persondetails</stat>
+</suite>
+</statistics>
+<errors>
+<msg time="2024-05-02T11:49:56.754159" level="WARN">The chromedriver version (112.0.5615.49) detected in PATH at /usr/local/bin/chromedriver might not be compatible with the detected chrome version (124.0.6367.118); currently, chromedriver 124.0.6367.91 is recommended for chrome 124.*, so it is advised to delete the driver in PATH and retry</msg>
+</errors>
+</robot>

@@ -1,0 +1,853 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.0 (Python 3.12.1 on darwin)" generated="2024-04-24T22:47:28.782728" rpa="false" schemaversion="5">
+<suite id="s1" name="Online-Shopping-Validation-Tests" source="/Users/ganesh/Desktop/trial/online-shopping-validation-tests.robot">
+<kw name="Start Test" type="SETUP">
+<kw name="Set Global Variable" owner="BuiltIn">
+<msg time="2024-04-24T22:47:28.994761" level="INFO">${total_cost_in_cart} = 0</msg>
+<arg>${total_cost_in_cart}</arg>
+<arg>0</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<status status="PASS" start="2024-04-24T22:47:28.994444" elapsed="0.000396"/>
+</kw>
+<status status="PASS" start="2024-04-24T22:47:28.993524" elapsed="0.001469"/>
+</kw>
+<test id="s1-t1" name="Validate The Shopping Cart Checkout Price Calculation" line="133">
+<kw name="Initialize Test Case">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2024-04-24T22:47:28.996404" level="INFO">Opening browser 'Firefox' to base url 'https://posti.fi/en'.</msg>
+<arg>${SEARCH_URL}</arg>
+<arg>browser=${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2024-04-24T22:47:28.996034" elapsed="6.485325"/>
+</kw>
+<status status="PASS" start="2024-04-24T22:47:28.995646" elapsed="6.486194"/>
+</kw>
+<kw name="Accept cookies">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${cookies_accept_xpath}</arg>
+<arg>15</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-04-24T22:47:35.483338" elapsed="6.494264"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-04-24T22:47:41.978543" level="INFO">Clicking element 'xpath = //button[@id="onetrust-accept-btn-handler"]'.</msg>
+<arg>${cookies_accept_xpath}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-04-24T22:47:41.978030" elapsed="0.293324"/>
+</kw>
+<status status="PASS" start="2024-04-24T22:47:35.482514" elapsed="6.789110"/>
+</kw>
+<kw name="Visit Online Store">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${login_xpath}</arg>
+<arg>15</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-04-24T22:47:42.272300" elapsed="0.028933"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-04-24T22:47:42.301883" level="INFO">Clicking element 'xpath = //button[@class="sc-1i37xtg-0 guFYiI sc-nbuspz-5 sc-nbuspz-10 kRWyff bQopvN"]'.</msg>
+<arg>${login_xpath}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-04-24T22:47:42.301551" elapsed="0.284368"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${online_store_xpath}</arg>
+<arg>15</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-04-24T22:47:42.586270" elapsed="0.012032"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2024-04-24T22:47:42.598809" level="INFO">Clicking button 'xpath = //button[span[text()='Online shop']]'.</msg>
+<arg>${online_store_xpath}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2024-04-24T22:47:42.598523" elapsed="4.353050"/>
+</kw>
+<status status="PASS" start="2024-04-24T22:47:42.271943" elapsed="4.679854"/>
+</kw>
+<kw name="Go To Stamp Purchase Page">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${order_stamp_xpath}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-04-24T22:47:46.952868" elapsed="0.027104"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-04-24T22:47:46.980605" level="INFO">Clicking element 'xpath = //button[@class="sc-8cub1p-0 jiAnjG"]'.</msg>
+<arg>${order_stamp_xpath}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-04-24T22:47:46.980254" elapsed="0.258703"/>
+</kw>
+<status status="PASS" start="2024-04-24T22:47:46.952316" elapsed="0.286800"/>
+</kw>
+<kw name="Select Stamp By Index">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${stamps_list_xpath}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-04-24T22:47:47.239838" elapsed="1.047562"/>
+</kw>
+<kw name="Get WebElements" owner="SeleniumLibrary">
+<msg time="2024-04-24T22:47:48.336038" level="INFO">${elements} = [&lt;selenium.webdriver.remote.webelement.WebElement (session="a4bc8a2d-e382-4319-ab3a-f802fa1ecf86", element="deb19953-b612-4735-a301-7716200c5e7e")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (s...</msg>
+<var>${elements}</var>
+<arg>${stamps_list_xpath}</arg>
+<doc>Returns a list of WebElement objects matching the ``locator``.</doc>
+<status status="PASS" start="2024-04-24T22:47:48.287829" elapsed="0.048300"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-04-24T22:47:48.336889" level="INFO">Clicking element '&lt;selenium.webdriver.remote.webelement.WebElement (session="a4bc8a2d-e382-4319-ab3a-f802fa1ecf86", element="e37db2ed-e2e2-487d-acd6-2b2b0e408170")&gt;'.</msg>
+<arg>${elements}[${item_index}]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-04-24T22:47:48.336427" elapsed="0.255162"/>
+</kw>
+<arg>1</arg>
+<status status="PASS" start="2024-04-24T22:47:47.239438" elapsed="1.352404"/>
+</kw>
+<kw name="Add Stamp To Cart">
+<kw name="Wait Until Element Is Not Visible" owner="SeleniumLibrary">
+<msg time="2024-04-24T22:47:50.540331" level="INFO">Suppressing StaleElementReferenceException from Selenium.</msg>
+<arg>${overlay_1_xpath}</arg>
+<arg>15</arg>
+<doc>Waits until the element ``locator`` is not visible.</doc>
+<status status="PASS" start="2024-04-24T22:47:48.594913" elapsed="2.149451"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${add_to_cart_xpath}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-04-24T22:47:50.744596" elapsed="0.014857"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-04-24T22:47:50.760223" level="INFO">Clicking element 'xpath = //button[@class="sc-8cub1p-0 brqSrJ AddToCartButton__AddButton-sc-3zhkh6-1 dqSrAi"]'.</msg>
+<arg>${add_to_cart_xpath}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-04-24T22:47:50.759762" elapsed="0.288223"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-04-24T22:47:51.066187" level="INFO">${price} = 23.00 €</msg>
+<var>${price}</var>
+<arg>${get_individual_stamp_value_xpath}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-04-24T22:47:51.048238" elapsed="0.018346"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-04-24T22:47:51.067769" level="INFO">23.00 €</msg>
+<arg>${price}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-04-24T22:47:51.067145" elapsed="0.000771"/>
+</kw>
+<kw name="Split String" owner="String">
+<msg time="2024-04-24T22:47:51.068621" level="INFO">${split} = ['23.00', '€']</msg>
+<var>${split}</var>
+<arg>${price}</arg>
+<doc>Splits the ``string`` using ``separator`` as a delimiter string.</doc>
+<status status="PASS" start="2024-04-24T22:47:51.068233" elapsed="0.000453"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-04-24T22:47:51.069380" level="INFO">['23.00', '€']</msg>
+<arg>${split}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-04-24T22:47:51.068992" elapsed="0.000572"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-04-24T22:47:51.070110" level="INFO">float(23.00)</msg>
+<arg>float(${split}[0])</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-04-24T22:47:51.069860" elapsed="0.000322"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2024-04-24T22:47:51.070855" level="INFO">${total} = 23.0</msg>
+<var>${total}</var>
+<arg>${total_cost_in_cart} + float(${split}[0])</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2024-04-24T22:47:51.070430" elapsed="0.000467"/>
+</kw>
+<kw name="Set Global Variable" owner="BuiltIn">
+<msg time="2024-04-24T22:47:51.073949" level="INFO">${total_cost_in_cart} = 23.0</msg>
+<arg>${total_cost_in_cart}</arg>
+<arg>${total}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<status status="PASS" start="2024-04-24T22:47:51.073386" elapsed="0.000740"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-04-24T22:47:51.074583" level="INFO">23.0</msg>
+<arg>${total_cost_in_cart}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-04-24T22:47:51.074350" elapsed="0.000312"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-04-24T22:47:51.075008" level="INFO">23.0</msg>
+<arg>${total}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-04-24T22:47:51.074819" elapsed="0.000253"/>
+</kw>
+<status status="PASS" start="2024-04-24T22:47:48.593691" elapsed="2.481481"/>
+</kw>
+<kw name="Go Back" owner="SeleniumLibrary">
+<doc>Simulates the user clicking the back button on their browser.</doc>
+<status status="PASS" start="2024-04-24T22:47:51.075404" elapsed="0.160163"/>
+</kw>
+<kw name="Select Stamp By Index">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${stamps_list_xpath}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-04-24T22:47:51.237671" elapsed="0.145368"/>
+</kw>
+<kw name="Get WebElements" owner="SeleniumLibrary">
+<msg time="2024-04-24T22:47:51.402619" level="INFO">${elements} = [&lt;selenium.webdriver.remote.webelement.WebElement (session="a4bc8a2d-e382-4319-ab3a-f802fa1ecf86", element="e70bfa42-7bc4-4593-8261-1df0c1bedd7f")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (s...</msg>
+<var>${elements}</var>
+<arg>${stamps_list_xpath}</arg>
+<doc>Returns a list of WebElement objects matching the ``locator``.</doc>
+<status status="PASS" start="2024-04-24T22:47:51.383333" elapsed="0.019423"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-04-24T22:47:51.403606" level="INFO">Clicking element '&lt;selenium.webdriver.remote.webelement.WebElement (session="a4bc8a2d-e382-4319-ab3a-f802fa1ecf86", element="0e74a45f-5d63-436c-985d-313bb0e6e258")&gt;'.</msg>
+<arg>${elements}[${item_index}]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-04-24T22:47:51.403064" elapsed="0.243544"/>
+</kw>
+<arg>2</arg>
+<status status="PASS" start="2024-04-24T22:47:51.236123" elapsed="0.410688"/>
+</kw>
+<kw name="Add Stamp To Cart">
+<kw name="Wait Until Element Is Not Visible" owner="SeleniumLibrary">
+<arg>${overlay_1_xpath}</arg>
+<arg>15</arg>
+<doc>Waits until the element ``locator`` is not visible.</doc>
+<status status="PASS" start="2024-04-24T22:47:51.647941" elapsed="1.225914"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${add_to_cart_xpath}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-04-24T22:47:52.874617" elapsed="0.014120"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-04-24T22:47:52.889481" level="INFO">Clicking element 'xpath = //button[@class="sc-8cub1p-0 brqSrJ AddToCartButton__AddButton-sc-3zhkh6-1 dqSrAi"]'.</msg>
+<arg>${add_to_cart_xpath}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-04-24T22:47:52.889035" elapsed="0.272175"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-04-24T22:47:53.184573" level="INFO">${price} = 23.00 €</msg>
+<var>${price}</var>
+<arg>${get_individual_stamp_value_xpath}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-04-24T22:47:53.161536" elapsed="0.023096"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-04-24T22:47:53.185065" level="INFO">23.00 €</msg>
+<arg>${price}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-04-24T22:47:53.184846" elapsed="0.000285"/>
+</kw>
+<kw name="Split String" owner="String">
+<msg time="2024-04-24T22:47:53.185624" level="INFO">${split} = ['23.00', '€']</msg>
+<var>${split}</var>
+<arg>${price}</arg>
+<doc>Splits the ``string`` using ``separator`` as a delimiter string.</doc>
+<status status="PASS" start="2024-04-24T22:47:53.185290" elapsed="0.000406"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-04-24T22:47:53.186354" level="INFO">['23.00', '€']</msg>
+<arg>${split}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-04-24T22:47:53.185911" elapsed="0.000526"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-04-24T22:47:53.186839" level="INFO">float(23.00)</msg>
+<arg>float(${split}[0])</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-04-24T22:47:53.186625" elapsed="0.000544"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2024-04-24T22:47:53.187959" level="INFO">${total} = 46.0</msg>
+<var>${total}</var>
+<arg>${total_cost_in_cart} + float(${split}[0])</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2024-04-24T22:47:53.187350" elapsed="0.000693"/>
+</kw>
+<kw name="Set Global Variable" owner="BuiltIn">
+<msg time="2024-04-24T22:47:53.188965" level="INFO">${total_cost_in_cart} = 46.0</msg>
+<arg>${total_cost_in_cart}</arg>
+<arg>${total}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<status status="PASS" start="2024-04-24T22:47:53.188381" elapsed="0.000706"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-04-24T22:47:53.190030" level="INFO">46.0</msg>
+<arg>${total_cost_in_cart}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-04-24T22:47:53.189391" elapsed="0.000753"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-04-24T22:47:53.190837" level="INFO">46.0</msg>
+<arg>${total}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-04-24T22:47:53.190524" elapsed="0.000417"/>
+</kw>
+<status status="PASS" start="2024-04-24T22:47:51.647497" elapsed="1.543781"/>
+</kw>
+<kw name="Go To Shopping Cart">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${go_to_cart_xpath}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-04-24T22:47:53.192855" elapsed="0.013718"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-04-24T22:47:53.207197" level="INFO">Clicking element 'xpath = //span[@class="CartButton__CartText-sc-e8t2bo-1 kAfxvi"]'.</msg>
+<arg>${go_to_cart_xpath}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-04-24T22:47:53.206824" elapsed="0.244101"/>
+</kw>
+<status status="PASS" start="2024-04-24T22:47:53.191928" elapsed="0.259142"/>
+</kw>
+<kw name="Checkout The Items In Shopping Cart">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${overlay_2_xpath}</arg>
+<arg>15</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-04-24T22:47:53.451814" elapsed="0.762991"/>
+</kw>
+<kw name="Wait Until Element Is Not Visible" owner="SeleniumLibrary">
+<arg>${overlay_2_xpath}</arg>
+<arg>15</arg>
+<doc>Waits until the element ``locator`` is not visible.</doc>
+<status status="PASS" start="2024-04-24T22:47:54.215606" elapsed="0.669765"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${go_to_check_out_xpath}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-04-24T22:47:54.885701" elapsed="0.022676"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-04-24T22:47:54.909198" level="INFO">Clicking element 'xpath = //span[@class="CartTotals__Sum-sc-4buoch-5 BQmBH"]'.</msg>
+<arg>${go_to_check_out_xpath}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-04-24T22:47:54.908856" elapsed="0.230385"/>
+</kw>
+<status status="PASS" start="2024-04-24T22:47:53.451402" elapsed="1.688140"/>
+</kw>
+<kw name="Validate Total Cost Calculation">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${shopping_card_total_cost_xpath}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-04-24T22:47:55.141245" elapsed="0.011601"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-04-24T22:47:55.165670" level="INFO">${total_price} = 46.00 €</msg>
+<var>${total_price}</var>
+<arg>${shopping_card_total_cost_xpath}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-04-24T22:47:55.153066" elapsed="0.012659"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-04-24T22:47:55.166127" level="INFO">46.00 €</msg>
+<arg>${total_price}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-04-24T22:47:55.165922" elapsed="0.000270"/>
+</kw>
+<kw name="Split String" owner="String">
+<msg time="2024-04-24T22:47:55.166553" level="INFO">${split} = ['46.00', '€']</msg>
+<var>${split}</var>
+<arg>${total_price}</arg>
+<doc>Splits the ``string`` using ``separator`` as a delimiter string.</doc>
+<status status="PASS" start="2024-04-24T22:47:55.166336" elapsed="0.000254"/>
+</kw>
+<kw name="Should Be Equal As Numbers" owner="BuiltIn">
+<msg time="2024-04-24T22:47:55.166985" level="INFO">Argument types are:
+&lt;class 'str'&gt;
+&lt;class 'float'&gt;</msg>
+<arg>${split}[0]</arg>
+<arg>${total_cost_in_cart}</arg>
+<doc>Fails if objects are unequal after converting them to real numbers.</doc>
+<status status="PASS" start="2024-04-24T22:47:55.166755" elapsed="0.000323"/>
+</kw>
+<status status="PASS" start="2024-04-24T22:47:55.140263" elapsed="0.026919"/>
+</kw>
+<kw name="End Test">
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2024-04-24T22:47:55.167858" elapsed="3.261622"/>
+</kw>
+<status status="PASS" start="2024-04-24T22:47:55.167521" elapsed="3.262169"/>
+</kw>
+<status status="PASS" start="2024-04-24T22:47:28.995108" elapsed="29.434928"/>
+</test>
+<test id="s1-t2" name="Check the Postal Code Validation" line="148">
+<kw name="Initialize Test Case">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2024-04-24T22:47:58.433323" level="INFO">Opening browser 'Firefox' to base url 'https://posti.fi/en'.</msg>
+<arg>${SEARCH_URL}</arg>
+<arg>browser=${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2024-04-24T22:47:58.432783" elapsed="16.283747"/>
+</kw>
+<status status="PASS" start="2024-04-24T22:47:58.431739" elapsed="16.285181"/>
+</kw>
+<kw name="Accept cookies">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${cookies_accept_xpath}</arg>
+<arg>15</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-04-24T22:48:14.718063" elapsed="13.346218"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-04-24T22:48:28.064824" level="INFO">Clicking element 'xpath = //button[@id="onetrust-accept-btn-handler"]'.</msg>
+<arg>${cookies_accept_xpath}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-04-24T22:48:28.064521" elapsed="0.281353"/>
+</kw>
+<status status="PASS" start="2024-04-24T22:48:14.717485" elapsed="13.628578"/>
+</kw>
+<kw name="Visit Online Store">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${login_xpath}</arg>
+<arg>15</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-04-24T22:48:28.346829" elapsed="0.029912"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-04-24T22:48:28.377462" level="INFO">Clicking element 'xpath = //button[@class="sc-1i37xtg-0 guFYiI sc-nbuspz-5 sc-nbuspz-10 kRWyff bQopvN"]'.</msg>
+<arg>${login_xpath}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-04-24T22:48:28.377066" elapsed="0.302329"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${online_store_xpath}</arg>
+<arg>15</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-04-24T22:48:28.679651" elapsed="0.012239"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2024-04-24T22:48:28.692398" level="INFO">Clicking button 'xpath = //button[span[text()='Online shop']]'.</msg>
+<arg>${online_store_xpath}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2024-04-24T22:48:28.692119" elapsed="5.942728"/>
+</kw>
+<status status="PASS" start="2024-04-24T22:48:28.346394" elapsed="6.288740"/>
+</kw>
+<kw name="Go To Stamp Purchase Page">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${order_stamp_xpath}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-04-24T22:48:34.635921" elapsed="0.020432"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-04-24T22:48:34.657114" level="INFO">Clicking element 'xpath = //button[@class="sc-8cub1p-0 jiAnjG"]'.</msg>
+<arg>${order_stamp_xpath}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-04-24T22:48:34.656749" elapsed="0.262212"/>
+</kw>
+<status status="PASS" start="2024-04-24T22:48:34.635548" elapsed="0.283559"/>
+</kw>
+<kw name="Select Stamp By Index">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${stamps_list_xpath}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-04-24T22:48:34.919799" elapsed="1.833236"/>
+</kw>
+<kw name="Get WebElements" owner="SeleniumLibrary">
+<msg time="2024-04-24T22:48:36.757851" level="INFO">${elements} = [&lt;selenium.webdriver.remote.webelement.WebElement (session="444dc678-b628-4750-8fc2-12923c5b2cad", element="5f8845ad-dbfc-4a9a-834a-79053dca5b6a")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (s...</msg>
+<var>${elements}</var>
+<arg>${stamps_list_xpath}</arg>
+<doc>Returns a list of WebElement objects matching the ``locator``.</doc>
+<status status="PASS" start="2024-04-24T22:48:36.753312" elapsed="0.004601"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-04-24T22:48:36.758449" level="INFO">Clicking element '&lt;selenium.webdriver.remote.webelement.WebElement (session="444dc678-b628-4750-8fc2-12923c5b2cad", element="ea34dc70-6e33-46df-b38d-24b04bd5afaa")&gt;'.</msg>
+<arg>${elements}[${item_index}]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-04-24T22:48:36.758124" elapsed="0.239915"/>
+</kw>
+<arg>1</arg>
+<status status="PASS" start="2024-04-24T22:48:34.919406" elapsed="2.078785"/>
+</kw>
+<kw name="Add Stamp To Cart">
+<kw name="Wait Until Element Is Not Visible" owner="SeleniumLibrary">
+<arg>${overlay_1_xpath}</arg>
+<arg>15</arg>
+<doc>Waits until the element ``locator`` is not visible.</doc>
+<status status="PASS" start="2024-04-24T22:48:36.998977" elapsed="2.133676"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${add_to_cart_xpath}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-04-24T22:48:39.132975" elapsed="0.036103"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-04-24T22:48:39.169582" level="INFO">Clicking element 'xpath = //button[@class="sc-8cub1p-0 brqSrJ AddToCartButton__AddButton-sc-3zhkh6-1 dqSrAi"]'.</msg>
+<arg>${add_to_cart_xpath}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-04-24T22:48:39.169295" elapsed="0.256544"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-04-24T22:48:39.450326" level="INFO">${price} = 23.00 €</msg>
+<var>${price}</var>
+<arg>${get_individual_stamp_value_xpath}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-04-24T22:48:39.426074" elapsed="0.024307"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-04-24T22:48:39.451952" level="INFO">23.00 €</msg>
+<arg>${price}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-04-24T22:48:39.451629" elapsed="0.000409"/>
+</kw>
+<kw name="Split String" owner="String">
+<msg time="2024-04-24T22:48:39.452480" level="INFO">${split} = ['23.00', '€']</msg>
+<var>${split}</var>
+<arg>${price}</arg>
+<doc>Splits the ``string`` using ``separator`` as a delimiter string.</doc>
+<status status="PASS" start="2024-04-24T22:48:39.452230" elapsed="0.000289"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-04-24T22:48:39.452836" level="INFO">['23.00', '€']</msg>
+<arg>${split}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-04-24T22:48:39.452671" elapsed="0.000226"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-04-24T22:48:39.453218" level="INFO">float(23.00)</msg>
+<arg>float(${split}[0])</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-04-24T22:48:39.453036" elapsed="0.000241"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2024-04-24T22:48:39.453799" level="INFO">${total} = 69.0</msg>
+<var>${total}</var>
+<arg>${total_cost_in_cart} + float(${split}[0])</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2024-04-24T22:48:39.453432" elapsed="0.000405"/>
+</kw>
+<kw name="Set Global Variable" owner="BuiltIn">
+<msg time="2024-04-24T22:48:39.454316" level="INFO">${total_cost_in_cart} = 69.0</msg>
+<arg>${total_cost_in_cart}</arg>
+<arg>${total}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<status status="PASS" start="2024-04-24T22:48:39.454013" elapsed="0.000360"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-04-24T22:48:39.454687" level="INFO">69.0</msg>
+<arg>${total_cost_in_cart}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-04-24T22:48:39.454522" elapsed="0.000224"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-04-24T22:48:39.455044" level="INFO">69.0</msg>
+<arg>${total}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-04-24T22:48:39.454884" elapsed="0.000217"/>
+</kw>
+<status status="PASS" start="2024-04-24T22:48:36.998582" elapsed="2.456615"/>
+</kw>
+<kw name="Go Back" owner="SeleniumLibrary">
+<doc>Simulates the user clicking the back button on their browser.</doc>
+<status status="PASS" start="2024-04-24T22:48:39.455635" elapsed="0.236799"/>
+</kw>
+<kw name="Select Stamp By Index">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${stamps_list_xpath}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-04-24T22:48:39.693477" elapsed="0.057069"/>
+</kw>
+<kw name="Get WebElements" owner="SeleniumLibrary">
+<msg time="2024-04-24T22:48:39.754201" level="INFO">${elements} = [&lt;selenium.webdriver.remote.webelement.WebElement (session="444dc678-b628-4750-8fc2-12923c5b2cad", element="17113aed-053f-4727-82ae-2829ebd28767")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (s...</msg>
+<var>${elements}</var>
+<arg>${stamps_list_xpath}</arg>
+<doc>Returns a list of WebElement objects matching the ``locator``.</doc>
+<status status="PASS" start="2024-04-24T22:48:39.750768" elapsed="0.003492"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-04-24T22:48:39.754769" level="INFO">Clicking element '&lt;selenium.webdriver.remote.webelement.WebElement (session="444dc678-b628-4750-8fc2-12923c5b2cad", element="559982bb-7470-42dc-9d74-2e5e93844199")&gt;'.</msg>
+<arg>${elements}[${item_index}]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-04-24T22:48:39.754469" elapsed="0.216963"/>
+</kw>
+<arg>2</arg>
+<status status="PASS" start="2024-04-24T22:48:39.692903" elapsed="0.278687"/>
+</kw>
+<kw name="Add Stamp To Cart">
+<kw name="Wait Until Element Is Not Visible" owner="SeleniumLibrary">
+<arg>${overlay_1_xpath}</arg>
+<arg>15</arg>
+<doc>Waits until the element ``locator`` is not visible.</doc>
+<status status="PASS" start="2024-04-24T22:48:39.972365" elapsed="1.767837"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${add_to_cart_xpath}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-04-24T22:48:41.740514" elapsed="0.120885"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-04-24T22:48:41.861901" level="INFO">Clicking element 'xpath = //button[@class="sc-8cub1p-0 brqSrJ AddToCartButton__AddButton-sc-3zhkh6-1 dqSrAi"]'.</msg>
+<arg>${add_to_cart_xpath}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-04-24T22:48:41.861622" elapsed="0.564933"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-04-24T22:48:42.498042" level="INFO">${price} = 23.00 €</msg>
+<var>${price}</var>
+<arg>${get_individual_stamp_value_xpath}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-04-24T22:48:42.426886" elapsed="0.071214"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-04-24T22:48:42.498546" level="INFO">23.00 €</msg>
+<arg>${price}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-04-24T22:48:42.498324" elapsed="0.000290"/>
+</kw>
+<kw name="Split String" owner="String">
+<msg time="2024-04-24T22:48:42.499035" level="INFO">${split} = ['23.00', '€']</msg>
+<var>${split}</var>
+<arg>${price}</arg>
+<doc>Splits the ``string`` using ``separator`` as a delimiter string.</doc>
+<status status="PASS" start="2024-04-24T22:48:42.498792" elapsed="0.000283"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-04-24T22:48:42.499531" level="INFO">['23.00', '€']</msg>
+<arg>${split}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-04-24T22:48:42.499343" elapsed="0.000291"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-04-24T22:48:42.500005" level="INFO">float(23.00)</msg>
+<arg>float(${split}[0])</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-04-24T22:48:42.499786" elapsed="0.000280"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2024-04-24T22:48:42.500677" level="INFO">${total} = 92.0</msg>
+<var>${total}</var>
+<arg>${total_cost_in_cart} + float(${split}[0])</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2024-04-24T22:48:42.500218" elapsed="0.000501"/>
+</kw>
+<kw name="Set Global Variable" owner="BuiltIn">
+<msg time="2024-04-24T22:48:42.501345" level="INFO">${total_cost_in_cart} = 92.0</msg>
+<arg>${total_cost_in_cart}</arg>
+<arg>${total}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<status status="PASS" start="2024-04-24T22:48:42.500929" elapsed="0.000506"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-04-24T22:48:42.501843" level="INFO">92.0</msg>
+<arg>${total_cost_in_cart}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-04-24T22:48:42.501627" elapsed="0.000309"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-04-24T22:48:42.502428" level="INFO">92.0</msg>
+<arg>${total}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-04-24T22:48:42.502165" elapsed="0.000363"/>
+</kw>
+<status status="PASS" start="2024-04-24T22:48:39.971999" elapsed="2.530656"/>
+</kw>
+<kw name="Go To Shopping Cart">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${go_to_cart_xpath}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-04-24T22:48:42.503672" elapsed="0.045215"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-04-24T22:48:42.550052" level="INFO">Clicking element 'xpath = //span[@class="CartButton__CartText-sc-e8t2bo-1 kAfxvi"]'.</msg>
+<arg>${go_to_cart_xpath}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-04-24T22:48:42.549217" elapsed="0.482930"/>
+</kw>
+<status status="PASS" start="2024-04-24T22:48:42.503005" elapsed="0.529287"/>
+</kw>
+<kw name="Checkout The Items In Shopping Cart">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${overlay_2_xpath}</arg>
+<arg>15</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-04-24T22:48:43.032941" elapsed="0.684077"/>
+</kw>
+<kw name="Wait Until Element Is Not Visible" owner="SeleniumLibrary">
+<arg>${overlay_2_xpath}</arg>
+<arg>15</arg>
+<doc>Waits until the element ``locator`` is not visible.</doc>
+<status status="PASS" start="2024-04-24T22:48:43.717251" elapsed="0.458351"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${go_to_check_out_xpath}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-04-24T22:48:44.175826" elapsed="0.014665"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-04-24T22:48:44.190997" level="INFO">Clicking element 'xpath = //span[@class="CartTotals__Sum-sc-4buoch-5 BQmBH"]'.</msg>
+<arg>${go_to_check_out_xpath}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-04-24T22:48:44.190717" elapsed="0.227394"/>
+</kw>
+<status status="PASS" start="2024-04-24T22:48:43.032592" elapsed="1.385665"/>
+</kw>
+<kw name="Go To Final Checkout Page">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${shopping_cart_checkout_xpath}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-04-24T22:48:44.419327" elapsed="0.013977"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-04-24T22:48:44.433882" level="INFO">Clicking element 'xpath = //button[@id="cart-totals-cta"]'.</msg>
+<arg>${shopping_cart_checkout_xpath}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-04-24T22:48:44.433542" elapsed="0.230937"/>
+</kw>
+<status status="PASS" start="2024-04-24T22:48:44.418641" elapsed="0.245979"/>
+</kw>
+<kw name="Enter Data To Postal Text Box">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${postal_code_xpath}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-04-24T22:48:44.665279" elapsed="1.344401"/>
+</kw>
+<kw name="Clear Element Text" owner="SeleniumLibrary">
+<arg>${postal_code_xpath}</arg>
+<doc>Clears the value of the text-input-element identified by ``locator``.</doc>
+<status status="PASS" start="2024-04-24T22:48:46.009908" elapsed="0.006578"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-04-24T22:48:46.017063" level="INFO">Typing text '12345' into text field 'xpath = //input[@id="billing-postcode-field"]'.</msg>
+<arg>${postal_code_xpath}</arg>
+<arg>${postal_code}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-04-24T22:48:46.016723" elapsed="0.305450"/>
+</kw>
+<arg>12345</arg>
+<status status="PASS" start="2024-04-24T22:48:44.664900" elapsed="1.657440"/>
+</kw>
+<kw name="Check For Warning Messages">
+<if>
+<branch type="IF" condition="${warning_expected} == $False">
+<kw name="Element Should Not Be Visible" owner="SeleniumLibrary">
+<msg time="2024-04-24T22:48:46.331204" level="INFO">Element 'xpath = //p[@class="sc-zfwtr2-0 cnxoHB"]' did not exist.</msg>
+<arg>${warning_message_post_code_xpath}</arg>
+<doc>Verifies that the element identified by ``locator`` is NOT visible.</doc>
+<status status="PASS" start="2024-04-24T22:48:46.324547" elapsed="0.006769"/>
+</kw>
+<status status="PASS" start="2024-04-24T22:48:46.323746" elapsed="0.007662"/>
+</branch>
+<branch type="ELSE">
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<arg>${warning_message_post_code_xpath}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="NOT RUN" start="2024-04-24T22:48:46.331733" elapsed="0.000048"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<var>${warn_message}</var>
+<arg>${warning_message_post_code_xpath}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="NOT RUN" start="2024-04-24T22:48:46.331933" elapsed="0.000038"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<arg>${warn_message}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2024-04-24T22:48:46.332118" elapsed="0.000038"/>
+</kw>
+<kw name="Should Not Be Empty" owner="BuiltIn">
+<arg>${warn_message}</arg>
+<doc>Verifies that the given item is not empty.</doc>
+<status status="NOT RUN" start="2024-04-24T22:48:46.332327" elapsed="0.000038"/>
+</kw>
+<status status="NOT RUN" start="2024-04-24T22:48:46.331526" elapsed="0.000893"/>
+</branch>
+<status status="PASS" start="2024-04-24T22:48:46.323622" elapsed="0.008855"/>
+</if>
+<arg>False</arg>
+<status status="PASS" start="2024-04-24T22:48:46.323138" elapsed="0.009430"/>
+</kw>
+<kw name="Enter Data To Postal Text Box">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${postal_code_xpath}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-04-24T22:48:46.333206" elapsed="0.037921"/>
+</kw>
+<kw name="Clear Element Text" owner="SeleniumLibrary">
+<arg>${postal_code_xpath}</arg>
+<doc>Clears the value of the text-input-element identified by ``locator``.</doc>
+<status status="PASS" start="2024-04-24T22:48:46.371544" elapsed="0.042175"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-04-24T22:48:46.414427" level="INFO">Typing text '1234' into text field 'xpath = //input[@id="billing-postcode-field"]'.</msg>
+<arg>${postal_code_xpath}</arg>
+<arg>${postal_code}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-04-24T22:48:46.413968" elapsed="0.170064"/>
+</kw>
+<arg>1234</arg>
+<status status="PASS" start="2024-04-24T22:48:46.332840" elapsed="0.251561"/>
+</kw>
+<kw name="Check For Warning Messages">
+<if>
+<branch type="IF" condition="${warning_expected} == $False">
+<kw name="Element Should Not Be Visible" owner="SeleniumLibrary">
+<arg>${warning_message_post_code_xpath}</arg>
+<doc>Verifies that the element identified by ``locator`` is NOT visible.</doc>
+<status status="NOT RUN" start="2024-04-24T22:48:46.586147" elapsed="0.000055"/>
+</kw>
+<status status="NOT RUN" start="2024-04-24T22:48:46.585689" elapsed="0.000587"/>
+</branch>
+<branch type="ELSE">
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2024-04-24T22:48:46.599353" level="INFO">Element 'xpath = //p[@class="sc-zfwtr2-0 cnxoHB"]' is displayed.</msg>
+<arg>${warning_message_post_code_xpath}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2024-04-24T22:48:46.586483" elapsed="0.013021"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-04-24T22:48:46.624553" level="INFO">${warn_message} = Value must be in the following form:</msg>
+<var>${warn_message}</var>
+<arg>${warning_message_post_code_xpath}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-04-24T22:48:46.599725" elapsed="0.024883"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-04-24T22:48:46.625080" level="INFO">Value must be in the following form:</msg>
+<arg>${warn_message}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-04-24T22:48:46.624860" elapsed="0.000286"/>
+</kw>
+<kw name="Should Not Be Empty" owner="BuiltIn">
+<msg time="2024-04-24T22:48:46.625508" level="INFO">Length is 36.</msg>
+<arg>${warn_message}</arg>
+<doc>Verifies that the given item is not empty.</doc>
+<status status="PASS" start="2024-04-24T22:48:46.625292" elapsed="0.000279"/>
+</kw>
+<status status="PASS" start="2024-04-24T22:48:46.586336" elapsed="0.039302"/>
+</branch>
+<status status="PASS" start="2024-04-24T22:48:46.585654" elapsed="0.040469"/>
+</if>
+<arg>True</arg>
+<status status="PASS" start="2024-04-24T22:48:46.585101" elapsed="0.041170"/>
+</kw>
+<kw name="End Test">
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2024-04-24T22:48:46.627041" elapsed="1.019702"/>
+</kw>
+<status status="PASS" start="2024-04-24T22:48:46.626632" elapsed="1.020274"/>
+</kw>
+<status status="PASS" start="2024-04-24T22:47:58.430571" elapsed="49.216816"/>
+</test>
+<kw name="End Test" type="TEARDOWN">
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2024-04-24T22:48:47.648949" elapsed="0.000162"/>
+</kw>
+<status status="PASS" start="2024-04-24T22:48:47.648683" elapsed="0.000526"/>
+</kw>
+<doc>Validate the price calculation in the shopping cart checkout as well as the post code Validation</doc>
+<status status="PASS" start="2024-04-24T22:47:28.786184" elapsed="78.863081"/>
+</suite>
+<statistics>
+<total>
+<stat pass="2" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="2" fail="0" skip="0" id="s1" name="Online-Shopping-Validation-Tests">Online-Shopping-Validation-Tests</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
